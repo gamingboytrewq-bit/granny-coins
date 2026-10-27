@@ -21,31 +21,38 @@ class MainActivity : AppCompatActivity() {
         val btnTaskGranny: Button = findViewById(R.id.btnTaskGranny)
         val btnWithdraw: Button = findViewById(R.id.btnWithdraw)
 
-        tvCoins.text = "Coins: $userCoins"
+        // شروعاتی کوائنز دکھانا
+        tvCoins.text = "$userCoins Coins"
 
+        // 1. گرینی گیم ٹاسک سسٹم
         btnTaskGranny.setOnClickListener {
             if (!taskCompleted) {
                 try {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.dvloper.granny"))
-                    startActivity(intent)
+                    // پلے سٹور پر گرینی گیم کا لنک اوپن کرنا
+                    val playStoreIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.dvloper.granny"))
+                    startActivity(playStoreIntent)
                     
+                    // 50 کوائنز ایڈ کرنا
                     userCoins += 50
                     taskCompleted = true
-                    tvCoins.text = "Coins: $userCoins"
-                    Toast.makeText(this, "مبارک ہو! آپ کو 50 کوائنز مل گئے ہیں", Toast.LENGTH_LONG).show()
+                    tvCoins.text = "$userCoins Coins"
+                    
+                    Toast.makeText(this, "مبارک ہو! آپ کو گرینی ٹاسک مکمل کرنے پر 50 کوائنز مل گئے ہیں", Toast.LENGTH_LONG).show()
                 } catch (e: Exception) {
-                    Toast.makeText(this, "لنک اوپن کرنے میں مسئلہ ہے", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "لنک اوپن کرنے میں کوئی مسئلہ ہے", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this, "آپ یہ ٹاسک پہلے ہی مکمل کر چکے ہیں!", Toast.LENGTH_SHORT).show()
             }
         }
 
+        // 2. پیمنٹ ود ڈرا سسٹم
         btnWithdraw.setOnClickListener {
             if (userCoins >= 500) {
-                Toast.makeText(this, "پیمنٹ ود ڈرا کی درخواست جمع ہو گئی ہے!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "آپ کی ود ڈرا کی درخواست کامیابی سے جمع ہو گئی ہے!", Toast.LENGTH_LONG).show()
+                // یہاں آپ چاہیں تو ود ڈرا کے بعد کوائنز مائنس یا ری سیٹ بھی کر سکتے ہیں
             } else {
-                Toast.makeText(this, "کم از کم 500 کوائنز ہونے ضروری ہیں!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "ود ڈرا کے لیے کم از کم 500 کوائنز کا ہونا ضروری ہے! (موجودہ: $userCoins)", Toast.LENGTH_LONG).show()
             }
         }
     }
