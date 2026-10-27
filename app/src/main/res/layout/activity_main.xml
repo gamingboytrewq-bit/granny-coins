@@ -18,7 +18,7 @@
         android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+h/btnTaskGranny"
+        android:id="@+id/btnTaskGranny"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task: Download Granny Game (+50 Coins)"
