@@ -7,33 +7,65 @@
     android:padding="20dp"
     android:background="#121212">
 
+    <!-- ایپ کا ٹائٹل -->
     <TextView
-        android:id="@+id/tvCoins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coins: 0"
-        android:textSize="28sp"
-        android:textColor="#FFEB3B"
+        android:text="Granny Coins Earning"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="20dp"/>
 
+    <!-- ڈیش بورڈ: کوائنز شو کرنے کی جگہ -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1E1E1E"
+        android:padding="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Balance"
+            android:textColor="#AAAAAA"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 Coins"
+            android:textSize="32sp"
+            android:textColor="#FFEB3B"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+
+    <!-- ٹاسک سسٹم: گرینی گیم ڈاؤن لوڈ کرنے کا بٹن -->
     <Button
         android:id="@+id/btnTaskGranny"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Task: Download Granny Game (+50 Coins)"
+        android:text="Task: Download Granny (+50 Coins)"
         android:backgroundTint="#4CAF50"
         android:textColor="#FFFFFF"
-        android:padding="12dp"
+        android:padding="14dp"
+        android:textSize="15sp"
         android:layout_marginBottom="15dp"/>
 
+    <!-- ود ڈرا سسٹم: پیمنٹ نکلوانے کا بٹن -->
     <Button
         android:id="@+id/btnWithdraw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Withdraw Money"
+        android:text="Withdraw Earnings"
         android:backgroundTint="#FF9800"
         android:textColor="#FFFFFF"
-        android:padding="12dp"/>
+        android:padding="14dp"
+        android:textSize="15sp"/>
 
 </LinearLayout>
