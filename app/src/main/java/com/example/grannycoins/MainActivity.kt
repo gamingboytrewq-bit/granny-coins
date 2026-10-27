@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         tvCoins.text = "Coins: $userCoins"
 
-        // گرینی گیم ٹاسک اور پلے سٹور لنک
         btnTaskGranny.setOnClickListener {
             if (!taskCompleted) {
                 try {
@@ -42,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // ود ڈرا بٹن
         btnWithdraw.setOnClickListener {
             if (userCoins >= 500) {
                 Toast.makeText(this, "پیمنٹ ود ڈرا کی درخواست جمع ہو گئی ہے!", Toast.LENGTH_LONG).show()
